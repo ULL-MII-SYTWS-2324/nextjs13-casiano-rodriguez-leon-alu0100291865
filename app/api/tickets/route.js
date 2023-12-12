@@ -22,5 +22,5 @@ export async function POST(request) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body) 
     }).then(r => r.json());
-    return NextResponse.json(ticket, { status: 201 });
+    return NextResponse.json(ticket, { status: 201 }); // 201: a new resource was created
 }
