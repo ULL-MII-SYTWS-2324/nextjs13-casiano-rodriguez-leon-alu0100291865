@@ -27,7 +27,15 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## Lesson 19: Dynamic vs Static Route Handlers
 
 * <https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes>
-* 
+
+## Lesson 22: Intro to Supabase Auth
+
+**Backend as a service**: a service that provides a backend for your application, so you don't have to build your own.
+
+* Supabase docs for authentication: <https://supabase.com/docs/guides/auth>
+* Supabase quickstart for Next.js: <https://supabase.com/docs/guides/auth/quickstarts/nextjs>
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
