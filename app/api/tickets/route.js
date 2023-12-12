@@ -1,11 +1,17 @@
-import { NextResponse } from "next/server"
+import { NextResponse } from "next/server"; // https://nextjs.org/docs/app/api-reference/functions/next-response
+import { url } from "@/app/app.config.js";
 
 export async function GET() {
-  const res = await fetch('http://localhost:4000/tickets')
-
-  const tickets = await res.json()
-
-  return NextResponse.json(tickets, {
-    status: 200
-  })
+  console.log(url);
+  
+  let tickets = await fetch(url+"/tickets", { 
+    cache: "no-cache", // Also `cache: 'no-store'`  https://nextjs.org/docs/app/building-your-application/caching#fetch-optionscache
+    next: { revalidate: 3600 } // https://nextjs.org/docs/app/building-your-application/caching#fetch-optionsnextrevalidate
+  }).then(r => r.json());
+  return NextResponse.json(tickets, { status: 200 }); // https://nextjs.org/docs/app/api-reference/functions/next-response#json
 }
+
+/* 
+You can use the next.revalidate option of fetch to set the revalidation period (in seconds) 
+of an individual fetch request
+*/
