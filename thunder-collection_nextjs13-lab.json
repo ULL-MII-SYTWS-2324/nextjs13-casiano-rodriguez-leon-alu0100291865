@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
-    "collectionName": "nextjs13-lab-2",
-    "dateExported": "2023-12-12T11:48:56.848Z",
+    "collectionName": "nextjs13-lab",
+    "dateExported": "2023-12-12T12:26:28.939Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -36,6 +36,20 @@
                 "raw": "    {\n      \"title\": \"Comprar jamón\",\n      \"body\": \"Hamonae, jamonae. Pellentesque cursus convallis mauris, in tempus enim tincidunt vitae.\",\n      \"priority\": \"high\",\n      \"user_email\": \"peach@netninja.dev\"\n    }",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "c5e0cd08-f9e6-4966-a46f-6c8db5a1dd78",
+            "colId": "1040e012-6b2c-4484-b438-62995ae38885",
+            "containerId": "",
+            "name": "http://localhost:3000/api/tickets/2",
+            "url": "http://localhost:3000/api/tickets/2",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-12-12T12:26:06.700Z",
+            "modified": "2023-12-12T12:26:06.700Z",
+            "headers": [],
+            "params": [],
             "tests": []
         }
     ]
