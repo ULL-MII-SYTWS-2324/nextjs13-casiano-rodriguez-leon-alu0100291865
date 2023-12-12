@@ -3,7 +3,7 @@ import { url } from "@/app/app.config.js";
 
 export async function GET() {
   console.log(url);
-  console.log
+  
   let tickets = await fetch(url+"/tickets").then(r => r.json());
-  return new NextResponse.json(tickets, { status: 200 });
+  return new NextResponse.json(tickets, { status: 200 }); // https://nextjs.org/docs/app/api-reference/functions/next-response#json
 }
