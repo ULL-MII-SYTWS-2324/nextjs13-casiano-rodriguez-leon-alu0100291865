@@ -26,6 +26,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Lesson 19: Dynamic vs Static Route Handlers
 
+* <https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes>
+* 
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"; // https://nextjs.org/docs/app/api-reference/functions/next-response
 import { url } from "@/app/app.config.js";
 
-export const dynamic = 'force-dynamic' 
+export const dynamic = 'force-dynamic' // https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#opting-out-of-data-caching
 
 export async function GET() {
   console.log(url);
