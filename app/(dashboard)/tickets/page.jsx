@@ -8,6 +8,7 @@ export const metadata = {
 }
 
 export default function Tickets() {
+  console.log(`Component server accessing environment variable!\n${process.env.DB_PASS}`)
   return (
     <main>
       <nav>
