@@ -35,7 +35,6 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 * Supabase docs for authentication: <https://supabase.com/docs/guides/auth>
 * Supabase quickstart for Next.js: <https://supabase.com/docs/guides/auth/quickstarts/nextjs>
 
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
