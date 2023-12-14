@@ -108,7 +108,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 42.  Handling Server Errors     <https://netninja.dev/courses/next-13-masterclass/lectures/48541620i>
 43.  Calling Actions Using useTransition        <https://netninja.dev/courses/next-13-masterclass/lectures/48541621i>
 
-## Supabase version contradictions
+## Supabase version advances
 
 The initial package.json has these supabase dependencies:
 
@@ -139,47 +139,14 @@ or
   "tailwindcss": "3.3.2"
 }
 ```
-But when I tried to install the latest versions:
 
-```
-➜  nextjs13-casiano-rodriguez-leon-alu0100291865 git:(learn-22) ✗ npm ls @supabase/supabase-js
-dojo-helpdesk@0.1.0 /Users/casianorodriguezleon/campus-virtual/2324/sytws2324/practicas-alumnos/nextjs13/nextjs13-casiano-rodriguez-leon-alu0100291865
-├─┬ @supabase/auth-helpers-nextjs@0.7.4
-│ ├─┬ @supabase/auth-helpers-shared@0.4.1
-│ │ └── @supabase/supabase-js@2.39.0 deduped
-│ └── @supabase/supabase-js@2.39.0 deduped
-└── @supabase/supabase-js@2.39.0
-```
+So is version 2.26 versus 2.39 of supabase-js and version 0.7.3 versus 0.7.4 of auth-helpers-nextjs. 
+Not a very important difference.
 
-`deduped` is short for "deduplicated" (duplicates were removed). The documentation for [npm dedupe](https://docs.npmjs.com/cli/dedupe) explains how npm does this:
-
-> Searches the local package tree and attempts to simplify the overall structure by moving dependencies further up the tree, where they can be more effectively shared by multiple dependent packages.
-
-So, I tried to remove the dependencies and install them again:
-
-```
-➜  nextjs13-casiano-rodriguez-leon-alu0100291865 git:(learn-22) ✗ npm uninstall @supabase/auth-helpers-nextjs @supabase/supabase-js
-
-removed 19 packages, and audited 340 packages in 3s
-```
-
-```
-➜  nextjs13-casiano-rodriguez-leon-alu0100291865 git:(learn-22) ✗ npm i @supabase/supabase-js
-➜  nextjs13-casiano-rodriguez-leon-alu0100291865 git:(learn-22) ✗ npm ls @supabase/supabase-js
-dojo-helpdesk@0.1.0 /Users/casianorodriguezleon/campus-virtual/2324/sytws2324/practicas-alumnos/nextjs13/nextjs13-casiano-rodriguez-leon-alu0100291865
-└── @supabase/supabase-js@2.39.0
-
-➜  nextjs13-casiano-rodriguez-leon-alu0100291865 git:(learn-22) ✗ npm i @supabase/auth-helpers-nextjs
-➜  nextjs13-casiano-rodriguez-leon-alu0100291865 git:(learn-22) ✗ npm ls @supabase/auth-helpers-nextjs
-dojo-helpdesk@0.1.0 /Users/casianorodriguezleon/campus-virtual/2324/sytws2324/practicas-alumnos/nextjs13/nextjs13-casiano-rodriguez-leon-alu0100291865
-└── @supabase/auth-helpers-nextjs@0.8.7
-```
-and
-```
-➜  nextjs13-casiano-rodriguez-leon-alu0100291865 git:(learn-22) ✗ jq '.dependencies' package.json | grep supabase
-  "@supabase/auth-helpers-nextjs": "^0.8.7",
-  "@supabase/supabase-js": "^2.39.0",
-```
-I'm going to try to use the latest versions of Supabase packages.
 
 supabase uses cookies to pass authentication information between the client and the server. The cookie is called `sb:token` and is set by the server. The client then sends this cookie with every request to the server. The server then uses this cookie to authenticate the user.
+
+* [Documentation of Supabase Auth with the Next.js App Router](https://supabase.com/docs/guides/auth/auth-helpers/nextjs)
+* [Migration docs to the ssr package](https://supabase.com/docs/guides/auth/server-side/migrating-to-ssr-from-auth-helpers)
+* GH Repo [dijonmusters/nextjs-auth-helpers-videos](https://github.com/dijonmusters/nextjs-auth-helpers-videos)
+* [Cookie based auth in Next.js 13](https://www.youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF): The Next.js 13 App Router makes it really easy to write client code - for things like realtime subscriptions - and server code - for things like data fetching. In this series, Jon Meyers demonstrates how to configure Supabase Auth to use cookies, making sessions available across Client Components, Server Components, Route Handlers, Server Actions and Middleware 🚀
