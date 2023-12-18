@@ -6,7 +6,7 @@ export async function GET(request) {
   const url = new URL(request.url)
   const code = url.searchParams.get('code')
 
-  if (code) {
+  if (code) { // start a new session for the user with the code
     const supabase = createRouteHandlerClient({ cookies })
     await supabase.auth.exchangeCodeForSession(code)
   }

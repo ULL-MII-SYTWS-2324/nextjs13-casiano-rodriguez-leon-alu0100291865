@@ -10,7 +10,7 @@ export const dynamicParams = true
 export async function generateMetadata({ params }) {
   const supabase = createServerComponentClient({ cookies })
 
-  const { data: ticket } = await supabase.from('tickets')
+  const { data: ticket } = await supabase.from('Tickets')
     .select()
     .eq('id', params.id)
     .single()

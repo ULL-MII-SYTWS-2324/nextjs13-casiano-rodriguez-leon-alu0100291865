@@ -15,7 +15,7 @@ export default function CreateForm() {
     e.preventDefault()
     setIsLoading(true)
 
-    const newTicket = { title, body, priority, user_email: 'mario@netninja.dev' }
+    const newTicket = { title, body, priority, user_email: 'crguezl@ull.edu.es' }
 
     const res = await fetch('http://localhost:3000/api/tickets', {
       method: "POST",
@@ -26,7 +26,7 @@ export default function CreateForm() {
     const json = await res.json()
 
     if (json.error) {
-      console.log(error.message)
+      console.log(json.error.message)
     }
     if (json.data) {
       router.refresh()
@@ -46,7 +46,7 @@ export default function CreateForm() {
         />
       </label>
       <label>
-        <span>Title:</span>
+        <span>Body:</span>
         <textarea
           required
           onChange={(e) => setBody(e.target.value)}

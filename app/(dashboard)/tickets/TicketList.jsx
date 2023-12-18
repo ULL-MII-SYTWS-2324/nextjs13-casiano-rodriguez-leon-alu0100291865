@@ -3,11 +3,13 @@ import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 
 async function getTickets() {
+  debugger
   const supabase = createServerComponentClient({ cookies })
 
-  const { data, error } = await supabase.from('tickets')
+  const { data, error } = await supabase.from('Tickets')
     .select()
 
+  console.log(data, error)
   if (error) {
     console.log(error.message)
   }
@@ -16,7 +18,7 @@ async function getTickets() {
 }
 
 export default async function TicketList() {
-  const tickets = await getTickets()
+  const tickets = (await getTickets()) || []
 
   return (
     <>
