@@ -15,6 +15,7 @@ export default function AuthForm({ handleSubmit }) {
           onChange={(e) => setEmail(e.target.value)}
           value={email}
           required 
+          autocomplete="email"
         />
       </label>
       <label>
@@ -24,6 +25,7 @@ export default function AuthForm({ handleSubmit }) {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           required 
+          autocomplete="password"
         />
       </label>
       <button className="btn-primary">Submit</button>

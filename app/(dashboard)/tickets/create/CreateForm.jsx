@@ -38,14 +38,16 @@ export default function CreateForm() {
           type="text"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
+          autocomplete="title"
         />
       </label>
       <label>
-        <span>Title:</span>
+        <span>Body:</span>
         <textarea
           required
           onChange={(e) => setBody(e.target.value)}
           value={body}
+          autocomplete="body"
         />
       </label>
       <label>
