@@ -1,5 +1,9 @@
 ## Reference
 
+See <https://supabase.com/docs/reference/javascript/auth-signup>
+
+## supabase.auth.signUp
+
 Creates a new user.
 
 - By default, the user needs to verify their email address before logging in. To turn this off, **disable Confirm email** in [your project](https://supabase.com/dashboard/project/_/auth/providers).
