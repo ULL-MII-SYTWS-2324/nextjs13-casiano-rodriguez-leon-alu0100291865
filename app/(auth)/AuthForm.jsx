@@ -11,19 +11,24 @@ export default function AuthForm({ handleSubmit }) {
       <label>
         <span>Email:</span>
         <input 
+          name="email"
           type="email" 
           onChange={(e) => setEmail(e.target.value)}
           value={email}
+          autoFocus
           required 
+          autoComplete="email"
         />
       </label>
       <label>
         <span>Password:</span>
         <input 
+          name="password"
           type="password" 
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           required 
+          autoComplete="new-password"
         />
       </label>
       <button className="btn-primary">Submit</button>
